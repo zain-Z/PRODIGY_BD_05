@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
-// app.module.ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { HotelsModule } from './hotels/hotels.module'; // ✅ Import HotelsModule
 
 @Module({
   imports: [
@@ -24,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
 
     UsersModule,
     AuthModule,
+    HotelsModule, // ✅ Add HotelsModule to imports
   ],
 })
 export class AppModule {}
