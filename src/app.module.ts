@@ -7,7 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { HotelsModule } from './hotels/hotels.module';
 import { BookingsModule } from './bookings/bookings.module'; // ✅ Import BookingsModule
-
+import { RoomsModule } from './rooms/rooms.module'; // ✅ Import RoomsModule
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -28,6 +28,7 @@ import { BookingsModule } from './bookings/bookings.module'; // ✅ Import Booki
     AuthModule,
     HotelsModule,
     BookingsModule, // ✅ Add BookingsModule to imports
+    RoomsModule, // ✅ Add RoomsModule to imports
   ],
 })
 export class AppModule {}
