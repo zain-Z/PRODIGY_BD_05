@@ -2,14 +2,16 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { HotelsModule } from './hotels/hotels.module'; // ✅ Import HotelsModule
+import { HotelsModule } from './hotels/hotels.module';
+import { BookingsModule } from './bookings/bookings.module'; // ✅ Import BookingsModule
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // makes ConfigService available app-wide
+      isGlobal: true,
     }),
 
     MongooseModule.forRootAsync({
@@ -24,7 +26,8 @@ import { HotelsModule } from './hotels/hotels.module'; // ✅ Import HotelsModul
 
     UsersModule,
     AuthModule,
-    HotelsModule, // ✅ Add HotelsModule to imports
+    HotelsModule,
+    BookingsModule, // ✅ Add BookingsModule to imports
   ],
 })
 export class AppModule {}
